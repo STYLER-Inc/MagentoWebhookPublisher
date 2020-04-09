@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<events action="exclude">
+		<event name="my_module_event_before"/>
+		<event name="my_module_event_after"/>
+	</events>
+</config>

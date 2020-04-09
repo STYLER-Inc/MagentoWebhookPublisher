@@ -2,19 +2,12 @@
 namespace Styler\WebhookPublisher\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
+use Styler\WebhookPublisher\Helper\GenericObserver;
 
-class DetectModelDeleteAfter implements ObserverInterface
+class DetectModelDeleteAfter extends GenericObserver implements ObserverInterface
 {
-	protected $logger;
-	public function __construct(\Psr\Log\LoggerInterface $logger)
-	{
-		$this->logger = $logger;
-	}
-
-	public function execute(\Magento\Framework\Event\Observer $observer)
-	{
-		$event = $observer->getEvent();
-		$object = $event->getData('object');
-		$this->logger->debug(json_encode($object->getData()));
-	}
+	protected function getEvent()
+  {
+    return 'delete';
+  }
 }
